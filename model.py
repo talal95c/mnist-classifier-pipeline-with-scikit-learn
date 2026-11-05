@@ -68,8 +68,16 @@ def confusion_counts(y_true, y_pred):
     TN,FP,FN,TP  = cm.ravel()
     return {'TN': int(TN), 'FP': int(FP), 'FN': int(FN), 'TP': int(TP)}
 
-# Step 6 - precision_recall_f1 (not yet solved)
-# TODO: implement
+# Step 6 - precision_recall_f1
+from sklearn.metrics import f1_score,recall_score,precision_score
+
+def precision_recall_f1(y_true, y_pred):
+    # TODO: (precision, recall, f1) via sklearn.metrics with zero_division=0.
+    f1 = f1_score(y_true,y_pred,zero_division=0)
+    r = recall_score(y_true,y_pred,zero_division=0)
+    p = precision_score(y_true,y_pred,zero_division=0)
+
+    return (float(p), float(r), float(f1))
 
 # Step 7 - threshold_for_precision (not yet solved)
 # TODO: implement
