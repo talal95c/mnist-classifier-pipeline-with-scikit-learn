@@ -39,8 +39,11 @@ def load_mnist(n_train=10000, n_test=2000):
         "y_test": y_test
     }
 
-# Step 2 - binary_target (not yet solved)
-# TODO: implement
+# Step 2 - binary_target
+def binary_target(y, digit=5):
+    # TODO: boolean array, True where y == digit.
+
+    return np.asarray(y)==digit
 
 # Step 3 - train_sgd (not yet solved)
 # TODO: implement
