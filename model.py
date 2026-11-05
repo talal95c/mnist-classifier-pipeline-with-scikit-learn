@@ -59,8 +59,14 @@ def cross_val_predictions(clf, X, y, cv=3, method="predict"):
     # TODO: cross_val_predict on a clone of clf with the given method.
     return cross_val_predict(clone(clf),X,y,cv=cv,method = method )
 
-# Step 5 - confusion_counts (not yet solved)
-# TODO: implement
+# Step 5 - confusion_counts
+from sklearn.metrics import confusion_matrix 
+
+def confusion_counts(y_true, y_pred):
+    # TODO: {'TN': ..., 'FP': ..., 'FN': ..., 'TP': ...} from confusion_matrix(labels=[False, True]).
+    cm =  confusion_matrix(y_true,y_pred,labels=[False,True])
+    TN,FP,FN,TP  = cm.ravel()
+    return {'TN': int(TN), 'FP': int(FP), 'FN': int(FN), 'TP': int(TP)}
 
 # Step 6 - precision_recall_f1 (not yet solved)
 # TODO: implement
