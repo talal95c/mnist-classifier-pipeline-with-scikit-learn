@@ -147,8 +147,22 @@ def normalized_confusion(y_true, y_pred):
     )
     return matrix
 
-# Step 13 - most_confused_pairs (not yet solved)
-# TODO: implement
+# Step 13 - most_confused_pairs
+def most_confused_pairs(cm, k=3):
+    # TODO: top-k off-diagonal (true, predicted, rate) tuples, rate rounded to 3 decimals.
+    pass
+
+    off = cm.copy()
+    np.fill_diagonal(off,0)
+    
+    idx = np.argsort(off, axis=None)[::-1]
+    result = []
+    for index in idx:
+        i,j = np.unravel_index(index,off.shape)
+        if i != j:
+            result.append((int(i), int(j), round(float(off[i, j]), k)))
+
+    return result[:k]
 
 # Step 14 - multilabel_targets (not yet solved)
 # TODO: implement
