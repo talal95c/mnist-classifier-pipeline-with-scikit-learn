@@ -197,6 +197,11 @@ def save_and_reload_classifier(model, path):
 
     return joblib.load(path)
 
-# Step 18 - predict_digits (not yet solved)
-# TODO: implement
+# Step 18 - predict_digits
+def predict_digits(model, images):
+    # TODO: flatten (n, 28, 28) images to (n, 784) float32, predict, return a list of ints.
+    pass
+
+    X = np.asarray(images, dtype=np.float32).reshape(len(images), -1)    
+    return [int(p) for p in model.predict(X)]
 
