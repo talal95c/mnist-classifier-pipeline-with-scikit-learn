@@ -170,8 +170,17 @@ def multilabel_targets(y):
     a= np.c_[y >= 7,y % 2 == 1]
     return a
 
-# Step 15 - multilabel_knn (not yet solved)
-# TODO: implement
+# Step 15 - multilabel_knn
+from sklearn.neighbors import KNeighborsClassifier
+
+def multilabel_knn(X, Y, n_neighbors=5):
+    # TODO: fit and return KNeighborsClassifier(n_neighbors=n_neighbors).
+    return KNeighborsClassifier(n_neighbors=n_neighbors).fit(X,Y)
+
+
+def multilabel_f1(Y_true, Y_pred):
+    # TODO: macro-averaged F1 across labels as a float.
+    return float(f1_score(Y_true,Y_pred,average="macro"))
 
 # Step 16 - final_test_accuracy (not yet solved)
 # TODO: implement
