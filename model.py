@@ -164,8 +164,11 @@ def most_confused_pairs(cm, k=3):
 
     return result[:k]
 
-# Step 14 - multilabel_targets (not yet solved)
-# TODO: implement
+# Step 14 - multilabel_targets
+def multilabel_targets(y):
+    # TODO: (n, 2) boolean array: [y >= 7, y is odd].
+    a= np.c_[y >= 7,y % 2 == 1]
+    return a
 
 # Step 15 - multilabel_knn (not yet solved)
 # TODO: implement
