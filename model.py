@@ -135,8 +135,17 @@ def multiclass_cv_accuracy(model, X, y, cv=3):
     
     return float(cross_val_score(model,X,y,cv=cv,scoring="accuracy").mean())
 
-# Step 12 - normalized_confusion (not yet solved)
-# TODO: implement
+# Step 12 - normalized_confusion
+import numpy as np 
+from sklearn.metrics import confusion_matrix
+def normalized_confusion(y_true, y_pred):
+    matrix = confusion_matrix(
+        y_true,
+        y_pred,
+        labels=list(range(10)),
+        normalize="true"
+    )
+    return matrix
 
 # Step 13 - most_confused_pairs (not yet solved)
 # TODO: implement
