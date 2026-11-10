@@ -188,8 +188,14 @@ def final_test_accuracy(model, X_test, y_test):
     # TODO: accuracy_score of the fitted model on the test slice, as a float.
     return float(accuracy_score(y_test, model.predict(X_test)))
 
-# Step 17 - save_and_reload_classifier (not yet solved)
-# TODO: implement
+# Step 17 - save_and_reload_classifier
+import joblib
+def save_and_reload_classifier(model, path):
+    # TODO: joblib.dump then joblib.load; return the reloaded model.
+    joblib.dump(model,path)
+
+
+    return joblib.load(path)
 
 # Step 18 - predict_digits (not yet solved)
 # TODO: implement
